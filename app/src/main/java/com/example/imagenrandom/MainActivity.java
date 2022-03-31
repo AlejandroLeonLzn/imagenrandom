@@ -39,15 +39,21 @@ public class MainActivity extends AppCompatActivity {
     };
     //mostrar valores de Imagen
     public void mostrarImg(View view) {
-        int numerorandom = ThreadLocalRandom.current().nextInt(0, 6);
-        val=numerorandom;
-       // if(val<6) {
+        int numerorandom = ThreadLocalRandom.current().nextInt(0, 7);
+        while(numerorandom==val){
+            numerorandom = ThreadLocalRandom.current().nextInt(0, 7);
+        }
+
+            val = numerorandom;
+            // if(val<6) {
             imagen.setImageResource(imgItems[val].getImagen());
             letrero.setText(imgItems[val].getTexto());
-            val++;
-        /*}else{
+
+        /*    val++;
+        }else{
             val=0;
         }*/
+
     }
 
 }
